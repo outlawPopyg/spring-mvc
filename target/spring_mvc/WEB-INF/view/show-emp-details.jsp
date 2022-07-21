@@ -1,17 +1,26 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: m0rga
-  Date: 20.07.2022
-  Time: 20:40
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@ page language="java" pageEncoding="UTF-8" %>
+<html lang="ru">
 <head>
     <title>Title</title>
 </head>
 <body>
     <h2>Welcome</h2>
-    <div>Your name: ${nameAttribute}, ${descriptionAttribute}</div>
+    <div>Your name: ${employee.name}</div>
+    <div>Your last name: ${employee.lastName}</div>
+    <div>Your salary: ${employee.salary}</div>
+    <div>Your department: ${employee.department}</div>
+    <div>Favorite gun: ${employee.gun}</div>
+    <div>
+        Favorite horses:
+        <ul>
+            <c:forEach var="horse" items="${employee.favoriteHorses}">
+                <li>${horse}</li>
+            </c:forEach>
+        </ul>
+    </div>
+    <div>Phone number: ${employee.phoneNumber}</div>
+    <div>Phone number: ${employee.email}</div>
 </body>
 </html>
